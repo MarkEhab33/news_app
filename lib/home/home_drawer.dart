@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:news_app/home/my_theme.dart';
 
 class HomeDrawer extends StatelessWidget {
-
-
+  static const int categories=1;
+  static const int setting=2;
+ Function onDrawerItemClicked;
+HomeDrawer({required this.onDrawerItemClicked});
   @override
   Widget build(BuildContext context) {
     return  Container(
@@ -20,7 +22,7 @@ class HomeDrawer extends StatelessWidget {
             margin: const EdgeInsets.all(15),
             child: InkWell(
               onTap: (){
-                // categories
+                onDrawerItemClicked(HomeDrawer.categories);
               },
               child: Row(
                 children: [
@@ -35,7 +37,7 @@ class HomeDrawer extends StatelessWidget {
             margin: const EdgeInsets.all(15),
             child: InkWell(
               onTap: (){
-                //settings
+                onDrawerItemClicked(HomeDrawer.setting);
               },
               child: Row(
                 children: [
